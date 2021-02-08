@@ -17,9 +17,9 @@ jobs:
         sudo apt-get install texlive-latex-recommended
         sudo apt-get install texlive-fonts-recommended
         tlmgr init-usertree
-        #tlmgr install datetime
-        #tlmgr install xcolor
-        #tlmgr install nth
+        tlmgr install datetime
+        tlmgr install xcolor
+        tlmgr install nth
 
     - name: Build
       shell: bash
