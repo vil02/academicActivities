@@ -17,8 +17,7 @@ jobs:
         sudo apt-get install texlive-latex-recommended
         sudo apt-get install texlive-fonts-recommended
     - name: Install dependencies
-      run: |    
-        sudo apt-get install xzdec   
+      run: |
         tlmgr init-usertree
         tlmgr install datetime
         tlmgr install xcolor
