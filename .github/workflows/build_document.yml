@@ -28,6 +28,16 @@ jobs:
         ls
         cd ${{env.RESULT_PATH}}
         ls
+    - name: display files
+      working-directory: ${{github.workspace}}
+      shell: bash
+      run: |
+        pwd
+        ls
+        cd ${{env.RESULT_PATH}}
+        pwd
+        ls
+        
     - name: commit result
       working-directory: ${{github.workspace}}
       shell: bash
