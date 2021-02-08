@@ -14,14 +14,14 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get install texlive-latex-recommended
-        sudo apt-get install texlive-fonts-recommended
-    - name: Install dependencies
-      run: |
-        tlmgr init-usertree
-        tlmgr install datetime
-        tlmgr install xcolor
-        tlmgr install nth
+        sudo apt-get install texlive-latex-extra
+        #sudo apt-get install texlive-fonts-recommended
+    #- name: Install dependencies
+    #  run: |
+    #    tlmgr init-usertree
+    #    tlmgr install datetime
+    #    tlmgr install xcolor
+    #    tlmgr install nth
 
     - name: Build
       shell: bash
