@@ -16,6 +16,9 @@ jobs:
       run: |
         sudo apt-get install texlive-latex-base
         sudo apt-get install texlive-fonts-recommended
+        tlmgr install datetime
+        tlmgr install xcolor
+        tlmgr install nth
 
     - name: Build
       shell: bash
