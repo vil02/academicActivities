@@ -14,7 +14,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        sudo apt-get install texlive-base
+        sudo apt-get install texlive-latex-base
 
     - name: Build
       shell: bash
