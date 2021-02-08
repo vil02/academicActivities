@@ -2,8 +2,8 @@ name: build_document
 
 on:
   push:
-    paths:
-      - '!generated/**'
+    paths-ignore:
+      - 'generated/**'
 
 jobs:
   build:
