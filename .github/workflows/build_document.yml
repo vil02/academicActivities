@@ -1,0 +1,24 @@
+name: build_document
+
+on:
+  push:
+    paths:
+      - '!generated/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889
+        echo "deb http://miktex.org/download/ubuntu" | sudo tee /etc/apt/sources.list.d/miktex.list
+        sudo apt-get update
+        sudo apt-get install miktex
+
+    - name: Build
+      shell: bash
+      run: pdflatex academic_activities_eng.tex
