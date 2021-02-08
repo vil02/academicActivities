@@ -25,4 +25,5 @@ jobs:
 
     - name: Build
       shell: bash
-      run: pdflatex academic_activities_eng.tex
+      run: | 
+        for run_num in {1..3}; do pdflatex academic_activities_eng.tex -output-directory=./generated; done
