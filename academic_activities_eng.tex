@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=2.6cm, right=2.6cm, top=2.6cm, bottom=2.6cm, headsep=0.0cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[ddmmyyyy,hhmmss]{datetime}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage[super]{nth}
+\usepackage{hyperref}
+
+\newcommand{\macierzator}{[\setbox0\hbox{I}\hbox{MACI\lower0.3\ht0\hbox{E}RZATOR}]}
+\renewcommand{\dateseparator}{.}
+\newcommand{\marker}{\colorbox{white}{\textcolor{white}{\tiny{\today \, \currenttime\/}}}}
+
+\begin{document}
+\input{./source_eng/talks.tex}
+\input{./source_eng/articles.tex}
+\input{./source_eng/posters.tex}
+\input{./source_eng/conferences.tex}
+\input{./source_eng/teaching.tex}
+\marker
+\end{document}
