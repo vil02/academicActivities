@@ -16,6 +16,7 @@ jobs:
       run: |
         sudo apt-get install texlive-latex-base
         sudo apt-get install texlive-fonts-recommended
+        tlmgr init-usertree
         tlmgr install datetime
         tlmgr install xcolor
         tlmgr install nth
