@@ -20,14 +20,20 @@ jobs:
         sudo apt-get install texlive-latex-extra
 
     - name: run pdflatex
+      working-directory: ${{github.workspace}}
       shell: bash
       run: | 
         for run_num in {1..3}; do pdflatex academic_activities_eng.tex -output-directory=${{env.RESULT_PATH}}; done
+        ls
+        cd ${{env.RESULT_PATH}}
+        ls
     - name: commit result
+      working-directory: ${{github.workspace}}
       shell: bash
       run: |
         git config --global user.name 'build_document_action'
         git config --global user.email 'vil02@users.noreply.github.com'
+        git status
         git add ${{env.RESULT_PATH}}
         git commit -m "Automated document generation"
         git push
