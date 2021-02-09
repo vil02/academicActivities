@@ -14,7 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+      with:
+        persist-credentials: false
     - name: Install dependencies
       run: |
         sudo apt-get install texlive-latex-extra
@@ -39,4 +40,3 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{secrets.PUSH_TOKEN}}
-        persist-credentials: false
