@@ -9,5 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
       - name: LaTeX linter
         uses: colinaaa/chktex-action@v1.1.2
