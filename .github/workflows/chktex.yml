@@ -1,2 +1,9 @@
-- name: LaTeX linter
-  uses: colinaaa/chktex-action@v1.1.2
+name: LaTeX linter
+
+on: push
+
+jobs:
+  latex_linter_check:
+    runs-on: ubuntu-latest
+    steps:    
+    - uses: colinaaa/chktex-action@v1.1.2
