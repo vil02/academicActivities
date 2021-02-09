@@ -1,9 +1,13 @@
-name: LaTeX linter
+name: latex_linter_check
 
-on: push
-
+on:
+  push:
+    paths-ignore:
+      - 'generated/**'
 jobs:
-  latex_linter_check:
+  build:
     runs-on: ubuntu-latest
-    steps:    
-    - uses: colinaaa/chktex-action@v1.1.2
+
+    steps:
+      - name: LaTeX linter
+        uses: colinaaa/chktex-action@v1.1.2
