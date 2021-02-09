@@ -34,4 +34,8 @@ jobs:
         git config --global user.email 'vil02@users.noreply.github.com'
         git add ${{env.RESULT_PATH}}
         git commit -m "Automated document generation"
-        git push
+
+    - name: push result
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{secrets.PUSH_TOKEN}}
