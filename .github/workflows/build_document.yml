@@ -26,7 +26,7 @@ jobs:
       run: |
         ./ubuntu_local_build.sh
         mkdir -p ${{env.RESULT_PATH}}
-        mv academic_activities_eng.pdf {{env.RESULT_PATH}}
+        mv academic_activities_eng.pdf ${{env.RESULT_PATH}}
 
     - name: commit result
       working-directory: ${{github.workspace}}
