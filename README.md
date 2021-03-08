@@ -1,5 +1,5 @@
 [This file](./generated/academic_activities_eng.pdf) contains a list of the given talks, visited conferences etc.
 
 [![build_document](https://github.com/vil02/academicActivities/actions/workflows/build_document.yml/badge.svg)](https://github.com/vil02/academicActivities/actions/workflows/build_document.yml)
-![ChkTeX](https://github.com/vil02/academicActivities/workflows/latex_linter_check/badge.svg)
-![qpdf check](https://github.com/vil02/academicActivities/workflows/qpdf_check/badge.svg)
+[![latex_linter_check](https://github.com/vil02/academicActivities/actions/workflows/chktex.yml/badge.svg)](https://github.com/vil02/academicActivities/actions/workflows/chktex.yml)
+[![qpdf_check](https://github.com/vil02/academicActivities/actions/workflows/qpdf_check.yml/badge.svg)](https://github.com/vil02/academicActivities/actions/workflows/qpdf_check.yml)
