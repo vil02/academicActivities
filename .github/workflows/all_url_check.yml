@@ -12,9 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: urls-checker
-      uses: urlstechie/urlchecker-action@master
+    - name: Link Checker
+      uses: lycheeverse/lychee-action@v1.0.8
       with:
-        file_types: .md,.tex
-        retry_count: 3
-        
+        args: --verbose --no-progress **/*.tex **/*.md
