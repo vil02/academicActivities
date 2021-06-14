@@ -16,3 +16,5 @@ jobs:
       uses: urlstechie/urlchecker-action@master
       with:
         file_types: .md,.tex
+        retry_count: 3
+        
