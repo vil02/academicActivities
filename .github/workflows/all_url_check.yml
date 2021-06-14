@@ -15,4 +15,4 @@ jobs:
     - name: Link Checker
       uses: lycheeverse/lychee-action@v1.0.8
       with:
-        args: --verbose --no-progress **/*.tex **/*.md
+        args: --verbose --insecure --no-progress **/*.tex **/*.md
