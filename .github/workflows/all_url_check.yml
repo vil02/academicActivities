@@ -1,0 +1,16 @@
+name: all_url_check
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: '25 */3 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: urls-checker
+      uses: urlstechie/urlchecker-action@master
