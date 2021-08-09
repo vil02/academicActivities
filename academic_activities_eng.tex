@@ -14,19 +14,29 @@
 
 \renewcommand{\GenericWarning}[2]{\GenericError{#1}{#2}{}{This warning has been turned into a fatal error.}}
 
+\newcommand\blfootnote[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
 \hyphenation{róż-ni-czko-wych}
 \hyphenation{gór-nym}
 \hyphenation{pa-ra-bo-lic}
 \hyphenation{ma-cie-rza-tor}
 
 \begin{document}
+\blfootnote{Repository with the most recent version of
+    \href{https://raw.githubusercontent.com/vil02/academicActivities/master/generated/academic_activities_eng.pdf}{this document}: \\
+    \url{https://github.com/vil02/academicActivities}}
 \input{./source_eng/talks.tex}
 \input{./source_eng/articles.tex}
 \input{./source_eng/posters.tex}
 \input{./source_eng/conferences.tex}
 \input{./source_eng/teaching.tex}
 \input{./source_eng/theses.tex}
-Repository with the most recent version of this document:
-\url{https://github.com/vil02/academicActivities}
+
 \marker{}
 \end{document}
