@@ -15,10 +15,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
-        github_token: ${{secrets.PUSH_TOKEN}}
-        branch: ${{github.ref}}
     - name: Install dependencies
       run: |
         sudo apt-get install texlive-latex-extra
