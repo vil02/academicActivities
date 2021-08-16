@@ -71,4 +71,3 @@ then
 fi
 
 remove_lock
-g
