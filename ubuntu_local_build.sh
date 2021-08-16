@@ -6,7 +6,9 @@ set -u
 script_lock=$(dirname "${0}")/"build_lock_dir"
 readonly script_lock
 
-declare -r tex_file="academic_activities_eng.tex"
+declare -r core_name="academic_activities_eng"
+declare -r tex_file="${core_name}.tex"
+declare -r pdf_file="${core_name}.pdf"
 
 function is_already_running()
 {
@@ -44,14 +46,29 @@ fi
 
 create_lock
 
+rm -f ${pdf_file} ||
+{
+    remove_lock
+    printf "Can not remove the old result file\n"
+    exit 4
+}
+
 pdflatex -interaction=batchmode -draftmode $tex_file || true
 pdflatex -interaction=batchmode -draftmode $tex_file || true
 
 pdflatex -interaction=batchmode $tex_file ||
 {
     remove_lock
-    printf "Error while building document\n"
-    exit 4
+    printf "Error while building document (LaTeX error)\n"
+    exit 5
 }
 
+if ! [ -e ${pdf_file} ]
+then
+  remove_lock
+  printf "Error while building document (document not created)\n"
+  exit 6
+fi
+
 remove_lock
+g
