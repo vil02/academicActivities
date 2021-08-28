@@ -29,8 +29,10 @@ jobs:
         shell: bash
         run: |
           ./ubuntu_local_build.sh
+          if [[ $(find ./*.pdf | wc -l) -ne 1 ]]; then false; fi
           mkdir -p ${{env.result_folder}}
-          mv academic_activities_eng.pdf ${{env.result_folder}}
+          mv *.pdf ${{env.result_folder}}
+
       - name: status at ${{github.ref}}
         run: git status
 
