@@ -212,7 +212,7 @@ pythontex-files-*/
 
 # TikZ & PGF
 *.dpth
-*.md5
+# *.md5
 *.auxlock
 
 # todonotes
