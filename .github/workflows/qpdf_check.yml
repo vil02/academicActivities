@@ -20,6 +20,7 @@ jobs:
       - name: Install qpdf
         run: |
           sudo apt-get install qpdf
+
       - name: Check with qpdf
         shell: bash
         run: |
