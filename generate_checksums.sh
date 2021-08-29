@@ -41,11 +41,19 @@ fi
 
 create_lock
 
+core_name=$(./get_checksum_core_name.sh) ||
+{
+    remove_lock
+    printf "Cannot get the checksums core name\n"
+    exit 5
+}
+readonly core_name
+
 output_folder=$(./get_output_folder.sh) ||
 {
     remove_lock
     printf "Cannot get the result folder\n"
-    exit 5
+    exit 6
 }
 readonly output_folder
 
@@ -53,16 +61,16 @@ cd "$output_folder" ||
 {
     remove_lock
     printf "Cannot access result folder\n"
-    exit 6
+    exit 7
 }
 
 for sum_t in "md5sum" "sha1sum" "sha224sum" "sha384sum" "sha256sum" "sha512sum"
 do
-    $sum_t ./*.pdf  > "checksum.""${sum_t::${#sum_t}-3}" ||
+    $sum_t ./*.pdf  > "$core_name"."${sum_t::${#sum_t}-3}" ||
     {
         remove_lock
         printf "Error while generating %s\n" $sum_t
-        exit 6
+        exit 8
     }
 done
 
