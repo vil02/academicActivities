@@ -21,8 +21,8 @@ jobs:
         run: |
           sudo apt-get install qpdf
       - name: Check with qpdf
-        working-directory: ${{github.workspace}}/generated
         shell: bash
         run: |
+          cd "$(./get_output_folder.sh)"
           for cur_file in *.pdf; do qpdf --check $cur_file; done
 ...
