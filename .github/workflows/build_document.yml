@@ -19,6 +19,7 @@ jobs:
           token: ${{secrets.PUSH_TOKEN}}
       - name: Install dependencies
         run: |
+          sudo apt-get update
           sudo apt-get install texlive-latex-extra
 
       - name: run build script
